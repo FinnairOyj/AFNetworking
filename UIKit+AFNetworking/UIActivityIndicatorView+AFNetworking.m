@@ -87,7 +87,6 @@
         if (task.state != NSURLSessionTaskStateCompleted) {
             
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
 #pragma clang diagnostic ignored "-Warc-repeated-use-of-weak"
             if (task.state == NSURLSessionTaskStateRunning) {
                 [self.activityIndicatorView startAnimating];
@@ -116,7 +115,6 @@
         if (![operation isFinished]) {
             
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
 #pragma clang diagnostic ignored "-Warc-repeated-use-of-weak"
             if ([operation isExecuting]) {
                 [self.activityIndicatorView startAnimating];
@@ -136,7 +134,6 @@
 - (void)af_startAnimating {
     dispatch_async(dispatch_get_main_queue(), ^{
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
         [self.activityIndicatorView startAnimating];
 #pragma clang diagnostic pop
     });
@@ -145,9 +142,8 @@
 - (void)af_stopAnimating {
     dispatch_async(dispatch_get_main_queue(), ^{
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreceiver-is-weak"
         [self.activityIndicatorView stopAnimating];
-#pragma clang diagnostic pop
+#pragma clang diagnosti c pop
     });
 }
 
